@@ -1,4 +1,4 @@
-
+%Path invarient Control - single input
 %% =========== Set the paramters =======
 T=0.01; % Sampling Time
 k=2; % Sampling counter
