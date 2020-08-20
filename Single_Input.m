@@ -33,10 +33,10 @@ v_trans(k-1) = k1*xi_1(k-1)+k2*xi_2(k-1);
  
  LgLfalpha(k-1) = 2*V*(y(k-1)*cos(theta(k-1))-x(k-1)*sin(theta(k-1))); % second lie derivative
      
- u(k) = (-Lf2_alpha+v_trans(k-1))/(LgLfalpha(k-1)); % Controller
+ u(k-1) = (-Lf2_alpha+v_trans(k-1))/(LgLfalpha(k-1)); % Controller
  
 % kinematics
-theta(k)=u(k)*T+theta(k-1); % calculating theta
+theta(k)=u(k-1)*T+theta(k-1); % calculating theta
 x(k)=V*cos(theta(k))*T+x(k-1); % calculating x
 y(k)=V*sin(theta(k))*T+y(k-1); % calculating y
 
