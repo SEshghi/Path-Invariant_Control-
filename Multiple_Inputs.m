@@ -3,9 +3,9 @@ clc
 clear
 close all
 %% =========== Set the paramters =======
-T=0.01; % Sampling Time
+T=0.01; % Sampling Time dt=0.01
 k=2; % Sampling counter
-x(k-1)=1; % initilize the state x
+x(k-1)=1; % initilize the state x   
 y(k-1)=1; % initilize the state y
 theta(k-1)=0; % initilize the state theta
 x4(k-1)=0; % initilize the derivative of linear velocity
@@ -53,7 +53,7 @@ v = 1;
     d21(k-1) = 2*x(k-1)*cos(theta(k-1)) + 2*y(k-1)*sin(theta(k-1));
     d22(k-1) = 2*(v + x4(k-1))*(y(k-1)*cos(theta(k-1)) - x(k-1)*sin(theta(k-1)));
  
-    D=[d11(k-1) d12(k-1);d21(k-1) d22(k-1)];
+    D(k-1)=[d11(k-1) d12(k-1);d21(k-1) d22(k-1)];
     L2f_alpha(k-1) = 2*(v + x4(k-1))^2;
     L2f_pi(k-1) = (2*(v + x4(k-1))^2*((sin(2*theta(k-1))*y(k-1)^2)/2 + x(k-1)*cos(2*theta(k-1))*y(k-1)...
         -(x(k-1)^2*sin(2*theta(k-1)))/2))/(x(k-1)^2 + y(k-1)^2)^2;
